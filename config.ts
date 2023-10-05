@@ -135,3 +135,48 @@ export const technologies = [
   { id: 6, name: "AWS" },
   { id: 7, name: "TailwindCSS" },
 ];
+
+export const services = [
+  {
+    id: 1,
+    title: "Custom Web Development",
+    description:
+      "Crafting tailored web solutions using cutting-edge technologies to meet unique client requirements and deliver exceptional user experiences.",
+    Icon: Icons.web,
+  },
+  {
+    id: 2,
+    title: "API Development",
+    description:
+      "Building robust APIs that ensure seamless communication between various components of web applications, enhancing functionality and interactivity.",
+    Icon: Icons.api,
+  },
+  {
+    id: 3,
+    title: "UI/UX Design Integration",
+    description:
+      "Integrating aesthetically pleasing UI/UX designs into web applications to create an engaging and intuitive user interface.",
+    Icon: Icons.figma,
+  },
+  {
+    id: 4,
+    title: "3rd Party Integrations",
+    description:
+      "Expert in seamlessly integrating third-party services into web applications, including Email Integration, Payment Integration, and Analytics Integration, to enhance functionality and optimize user experience.",
+    Icon: Icons.third,
+  },
+  {
+    id: 5,
+    title: "Web Performance Optimization",
+    description:
+      "Optimizing websites for speed, responsiveness, and SEO to improve user satisfaction and achieve higher search engine rankings.",
+    Icon: Icons.speed,
+  },
+  {
+    id: 6,
+    title: "Maintenance and Support",
+    description:
+      "Providing ongoing maintenance, updates, and support services to ensure the smooth functioning and security of web applications, giving clients peace of mind.",
+    Icon: Icons.maintenance,
+  },
+];

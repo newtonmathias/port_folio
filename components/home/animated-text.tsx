@@ -20,7 +20,7 @@ const AnimatedText = () => {
 
   return (
     <div>
-      <h1 className="flex flex-col md:flex-row justify-center items-center font-extrabold text-7xl md:text-8xl">
+      <h1 className="flex flex-col lg:flex-row justify-center items-center font-extrabold text-7xl md:text-8xl lg:text-[80px] xl:text-8xl">
         {words.map((word, index) => (
           <span key={index}>
             {index === currentIndex ? (

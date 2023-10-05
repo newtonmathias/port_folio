@@ -57,19 +57,19 @@ const Contact = () => {
             <h5 className="text-4xl leading-8 font-bold">
               Talk to our sales team
             </h5>
-            <h2 className="text-xl font-lato">
+            <h2 className="text-xl font-lato ">
               Find out how Sanity can help your company or get a product demo.
               We'll be in touch shortly.
             </h2>
           </div>
-          <ul className="space-y-2 pt-2">
+          <ul className="space-y-2 pt-2 text-dark-gray dark:text-light-gray">
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
                 <Check />
               </span>
               <p>
                 You message send an invite on{" "}
-                <span className="text-[#73bb44] hover:underline hover:cursor-pointer">
+                <span className="text-[#73bb44] hover:underline hover:cursor-pointer font-lato">
                   upwork
                 </span>
               </p>

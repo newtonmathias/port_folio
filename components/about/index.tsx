@@ -13,7 +13,7 @@ export const About = () => {
         </h2>
       </div>
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="md:w-2/3 space-y-5 text-lg text-[#666666]">
+        <div className="md:w-2/3 space-y-5 text-lg text-dark-gray dark:text-light-gray">
           <p>
             Hey there! I'm Newton, a passionate web developer based in Nairobi.
             I'm all about crafting awesome digital experiences, and my journey
