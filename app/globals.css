@@ -93,3 +93,14 @@
     background-position: 0% 50%;
   }
 }
+
+/* swiper */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .swiper-wrapper {
+  transition-timing-function: linear;
+}

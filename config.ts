@@ -180,3 +180,30 @@ export const services = [
     Icon: Icons.maintenance,
   },
 ];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Belmin Muslimovic",
+    content:
+      "Newton is a great developer. He was able to handle the tasks fast and efficiently. Highly recommended!",
+  },
+  {
+    id: 2,
+    name: "Andre Van Veen",
+    content:
+      "Newton did everything we asked and is a very dedicated and hard worker. He'll be a great addition to any team. This job ended due to the business's closure.",
+  },
+  {
+    id: 3,
+    name: "Fadi Due",
+    content:
+      "Good developer to work with, with good react skills, will hire again soon…",
+  },
+  {
+    id: 4,
+    name: "Fadi Due",
+    content:
+      "Good developer to work with, with good react skills, will hire again soon…",
+  },
+];
