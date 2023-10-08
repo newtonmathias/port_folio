@@ -1,8 +1,8 @@
-import Image from "next/image";
-import profileImage from "../../public/images/pic.png";
 import { Button } from "../ui/button";
 import AnimatedText from "./animated-text";
 import Link from "next/link";
+import { MoveRight } from "lucide-react";
+
 const Landing = () => {
   return (
     <div className="container py-12 md:py-24">
@@ -10,11 +10,19 @@ const Landing = () => {
         className="flex flex-col justify-center items-center text-center"
         role="heading"
         aria-label="Craft. Enhance. Perfect."
+        aria-level={1}
       >
-        <h5 className="flex mb-12 items-center gap-2 border border-border py-1 px-3 text-sm font-lato rounded-full w-48">
-          <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-          <span className="font-bold">Currently available</span>
-        </h5>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 pb-10 md:pb-16">
+          <span className="font-medium text-lg text-dark-gray dark:text-light-gray">
+            Are You Looking For A Freelance Developer? Look no further.
+          </span>
+          <Link href="#contact">
+            <button className="flex items-center justify-center gap-1 border border-border py-1  px-3 text-sm font-semibold font-lato rounded-full bg-black text-white hover:bg-accent">
+              <p>Hire me to today</p>
+              <MoveRight className="h-4 w-4" />
+            </button>
+          </Link>
+        </div>
         <AnimatedText />
       </header>
       <div className="flex lg:w-1/2 mx-auto text-center">
@@ -32,9 +40,11 @@ const Landing = () => {
         >
           <Button className="w-full md:w-44 text-base">Book a Call</Button>
         </Link>
-        <Button className="w-full  md:w-44 text-base" variant="outline">
-          Contact Me
-        </Button>
+        <Link href="#contact">
+          <Button className="w-full  md:w-44 text-base" variant="outline">
+            Contact Me
+          </Button>
+        </Link>
       </div>
     </div>
   );

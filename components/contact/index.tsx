@@ -14,13 +14,16 @@ import {
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Check } from "lucide-react";
+import Link from "next/link";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().min(1, {
     message: "Email is required",
   }),
-  subject: z.string().min(1, {
-    message: "Subject is required",
+  name: z.string().min(1, {
+    message: "Name is required",
   }),
   message: z.string().min(1, {
     message: "Message is required",
@@ -32,7 +35,7 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      subject: "",
+      name: "",
       message: "",
     },
   });
@@ -41,10 +44,30 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-    } catch {}
+      emailjs
+        .send(
+          "service_ua26v85",
+          "template_qftrg52",
+          values,
+          "MA8057wIRyKE4i_kn"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      toast("Email sent successfully!");
+      form.reset();
+    } catch {
+      toast("Email not send.");
+    }
   };
+
   return (
-    <div className="container md:w-2/3 mx-auto py-20 ">
+    <div id="contact" className="container md:w-2/3 mx-auto py-20 ">
       <div className="text-center pb-16 space-y-2">
         <h5 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
           contact
@@ -55,48 +78,84 @@ const Contact = () => {
         <div className="flex-1 md:p-10">
           <div className="space-y-4">
             <h5 className="text-4xl leading-8 font-bold">
-              Talk to our sales team
+              I&apos;d love to work with you.
             </h5>
             <h2 className="text-xl font-lato ">
-              Find out how Sanity can help your company or get a product demo.
-              We'll be in touch shortly.
+              Feel free to reach out through any of the following contact
+              options.I&apos;ll reply as soon as possible!
             </h2>
           </div>
           <ul className="space-y-2 pt-2 text-dark-gray dark:text-light-gray">
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
-                <Check />
+                <Check className="h-5 w-5" />
               </span>
               <p>
-                You message send an invite on{" "}
-                <span className="text-[#73bb44] hover:underline hover:cursor-pointer font-lato">
-                  upwork
-                </span>
+                You can message me or send a job invite on{" "}
+                <Link
+                  href="https://www.upwork.com/freelancers/newtonm3"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span className="text-[#73bb44] hover:cursor-pointer font-lato hover:underline font-medium">
+                    Upwork
+                  </span>
+                </Link>
               </p>
             </li>
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
-                <Check />
+                <Check className="h-5 w-5" />
               </span>
-              <p>We are goal-driven and dedicated</p>
+              <p>
+                Drop me a mail at
+                <Link
+                  href="mailto:newtymathias@gmail.com"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span className="dark:text-gray-200 text-gray-600 hover:underline font-medium">
+                    {" "}
+                    newtymathias@gmail.com
+                  </span>
+                </Link>
+              </p>
             </li>
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
-                <Check />
+                <Check className="h-5 w-5" />
               </span>
-              <p>We are goal-driven and dedicated</p>
+              <p>Feel free to reach out via</p>
+              <Link
+                href="https://twitter.com/newto97"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="text-[#1DA1F2] hover:cursor-pointer font-lato hover:underline font-medium">
+                  Twitter
+                </span>
+              </Link>
             </li>
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
-                <Check />
+                <Check className="h-5 w-5" />
               </span>
-              <p>We are goal-driven and dedicated</p>
+              <p>Schedule a video call </p>
+              <Link
+                href="https://calendly.com/newtonmathias/30min"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="text-[#1d24f2] hover:cursor-pointer font-lato hover:underline font-medium">
+                  here
+                </span>
+              </Link>
             </li>
             <li className="flex items-center gap-3">
               <span className="rounded-full text-white p-1 bg-primary-yellow">
-                <Check />
+                <Check className="h-5 w-5" />
               </span>
-              <p>We are goal-driven and dedicated</p>
+              <p>Or fill out the form, I&apos;ll respond promptly via mail!</p>
             </li>
           </ul>
         </div>
@@ -106,6 +165,19 @@ const Contact = () => {
               onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-4 mt-4 p-6 border border-border rounded-md"
             >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input disabled={isSubmitting} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="email"
@@ -119,19 +191,7 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="subject"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Subject</FormLabel>
-                    <FormControl>
-                      <Input disabled={isSubmitting} {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
               <FormField
                 control={form.control}
                 name="message"

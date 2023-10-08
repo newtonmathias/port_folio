@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 
 const AnimatedText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const words = ["Craft.", "Enhance.", "Perfect."];
+  const words = ["Build.", "Optimize.", "Scale."];
   const gradients = [
-    "from-pink-500 via-red-500 to-yellow-500",
-    "from-pink-300 via-purple-300 to-indigo-400",
-    "from-yellow-200 via-green-200 to-green-500",
+    "from-blue-500 via-green-500 to-yellow-500",
+    "from-blue-300 via-teal-300 to-blue-400",
+    "from-yellow-200 via-green-200 to-orange-500",
   ];
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const AnimatedText = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   return (
     <div>

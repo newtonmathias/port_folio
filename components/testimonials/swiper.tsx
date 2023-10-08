@@ -2,10 +2,8 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 
 import React, { useRef, useState } from "react";
@@ -49,7 +47,8 @@ export default function TestimonialSwiper() {
               </CardContent>
               <CardFooter>
                 <p className="font-medium text-lg font-lustria text-dark-gray dark:text-light-gray">
-                  {testimonial.name} - company
+                  {testimonial.name} -{" "}
+                  <span className="italic">{testimonial.company}</span>
                 </p>
               </CardFooter>
             </Card>

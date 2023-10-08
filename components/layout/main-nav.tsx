@@ -23,7 +23,7 @@ const MainNav = () => {
           className="hidden items-center space-x-2 lg:flex"
         >
           <span className="hidden font-bold lg:inline-block text-3xl font-lustria">
-            NM
+            NMM
           </span>
         </Link>
         <NavigationMenu>
@@ -43,12 +43,25 @@ const MainNav = () => {
 
       <NavigationMenu>
         <NavigationMenuList>
-          <Button variant="toggle" size="icon">
-            <Github className="h-4 w-4" />
-          </Button>
-          <Button variant="toggle" size="icon">
-            <Twitter className="h-4 w-4 fill-current" />
-          </Button>
+          <Link
+            href="https://github.com/newtonmathias"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Button variant="toggle" size="icon">
+              <Github className="h-4 w-4" />
+            </Button>
+          </Link>
+          <Link
+            href="https://twitter.com/newto97"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Button variant="toggle" size="icon">
+              <Twitter className="h-4 w-4 fill-current" />
+            </Button>
+          </Link>
+
           <ModeToggle />
         </NavigationMenuList>
       </NavigationMenu>

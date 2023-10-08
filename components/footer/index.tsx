@@ -1,6 +1,3 @@
-import { socials } from "@/config";
-import { Github } from "lucide-react";
-import Link from "next/link";
 import Socials from "../socials";
 import { Separator } from "../ui/separator";
 

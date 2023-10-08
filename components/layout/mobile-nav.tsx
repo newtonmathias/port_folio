@@ -8,13 +8,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { siteConfig } from "@/config";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "../ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 export function MobileNav() {
@@ -28,7 +21,7 @@ export function MobileNav() {
         href="/"
         className="items-center space-x-2  lg:hidden  py-6"
       >
-        <span className="font-bold text-3xl">NM</span>
+        <span className="font-bold text-3xl">NMM</span>
       </Link>
       <div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>

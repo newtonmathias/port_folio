@@ -1,17 +1,13 @@
-import { ArrowBigRight } from "lucide-react";
-import Image from "next/image";
-import React from "react";
-import { Button } from "../ui/button";
 import { projects } from "@/config";
 import ProjectCard from "./project-card";
 
 const Projects = () => {
   return (
-    <div className="py-20">
+    <div id="projects" className="py-20">
       <div className="text-center pb-16 space-y-2">
         <h5 className="text-sm leading-6 text-primary-yellow ">RECENT WORK</h5>
         <h2 className="text-4xl font-semibold font-lato">
-          Here are a few past projects I've worked on
+          Here are a few past projects I&apos;ve worked on
         </h2>
       </div>
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mx-4 md:mx-8 gap-6 md:gap-7">
@@ -24,6 +20,8 @@ const Projects = () => {
             image={project.image}
             tech={project.tech}
             link={project.demo}
+            viewable={project.viewable}
+            online={project.online}
           />
         ))}
       </div>
