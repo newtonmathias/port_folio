@@ -4,7 +4,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Newton Mathias",
-  description: "Software Engineer",
+  description: "Freelance Software Engineer",
   url: "https://newtonmathias.com",
   mainNav: [
     {
