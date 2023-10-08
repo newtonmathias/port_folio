@@ -77,13 +77,13 @@ const Contact = () => {
       <div className="flex flex-col md:flex-row">
         <div className="flex-1 md:p-10">
           <div className="space-y-4">
-            <h5 className="text-4xl leading-8 font-bold">
+            <h3 className="text-4xl leading-8 font-bold">
               I&apos;d love to work with you.
-            </h5>
-            <h2 className="text-xl font-lato ">
+            </h3>
+            <h4 className="text-xl font-lato ">
               Feel free to reach out through any of the following contact
               options.I&apos;ll reply as soon as possible!
-            </h2>
+            </h4>
           </div>
           <ul className="space-y-2 pt-2 text-dark-gray dark:text-light-gray">
             <li className="flex items-center gap-3">
