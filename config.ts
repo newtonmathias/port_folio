@@ -3,10 +3,9 @@ import { Icons } from "./components/icons";
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Booksquare",
-  description: "Discover a world of books and knowledge.",
-  url: "https://skateshop.sadmn.com",
-  ogImage: "https://skateshop.sadmn.com/opengraph-image.png",
+  name: "Newton Mathias",
+  description: "Software Engineer",
+  url: "https://newtonmathias.com",
   mainNav: [
     {
       title: "About",
