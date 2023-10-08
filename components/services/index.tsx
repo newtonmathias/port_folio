@@ -6,9 +6,9 @@ const Services = () => {
   return (
     <div id="services" className="container xl:w-4/5 py-20">
       <div className="text-center pb-6 space-y-2">
-        <h5 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
+        <h1 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
           Services
-        </h5>
+        </h1>
         <h2 className="text-4xl py-3 font-semibold font-lato">
           Tailored Solutions for Your Unique Needs
         </h2>

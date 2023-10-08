@@ -18,7 +18,7 @@ const MainNav = () => {
     <div className="hidden gap-6 lg:flex justify-between py-3">
       <div className="hidden gap-6 lg:flex">
         <Link
-          aria-label="Home"
+          aria-label="NMM"
           href="/"
           className="hidden items-center space-x-2 lg:flex"
         >

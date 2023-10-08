@@ -69,9 +69,9 @@ const Contact = () => {
   return (
     <div id="contact" className="container md:w-2/3 mx-auto py-20 ">
       <div className="text-center pb-16 space-y-2">
-        <h5 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
+        <h1 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
           contact
-        </h5>
+        </h1>
         <h2 className="text-4xl font-semibold font-lato ">Get In Touch</h2>
       </div>
       <div className="flex flex-col md:flex-row">
@@ -140,14 +140,14 @@ const Contact = () => {
               <span className="rounded-full text-white p-1 bg-primary-yellow">
                 <Check className="h-5 w-5" />
               </span>
-              <p>Schedule a video call </p>
+              <p>Schedule a video callvia my </p>
               <Link
                 href="https://calendly.com/newtonmathias/30min"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span className="text-[#1d24f2] hover:cursor-pointer font-lato hover:underline font-medium">
-                  here
+                <span className="text-primary-yellow hover:cursor-pointer font-lato hover:underline font-medium">
+                  calendly
                 </span>
               </Link>
             </li>

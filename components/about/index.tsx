@@ -6,9 +6,9 @@ export const About = () => {
   return (
     <div id="about" className="container xl:w-2/3 py-20">
       <div className="text-center pb-6 space-y-2">
-        <h5 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
+        <h1 className="text-sm leading-6 tracking-widest text-primary-yellow uppercase font-bold font-lustria">
           About Me
-        </h5>
+        </h1>
         <h2 className="text-4xl font-semibold font-lato">
           Fusion of Code and Creativity
         </h2>

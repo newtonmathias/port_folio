@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <div id="projects" className="py-20">
       <div className="text-center pb-16 space-y-2">
-        <h5 className="text-sm leading-6 text-primary-yellow ">RECENT WORK</h5>
+        <h1 className="text-sm leading-6 text-primary-yellow ">RECENT WORK</h1>
         <h2 className="text-4xl font-semibold font-lato">
           Here are a few past projects I&apos;ve worked on
         </h2>

@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <div id="testimonials" className="py-20">
       <div className="text-center pb-16 space-y-2">
-        <h5 className="text-sm leading-6 text-primary-yellow ">Testimonials</h5>
+        <h1 className="text-sm leading-6 text-primary-yellow ">Testimonials</h1>
         <h2 className="text-4xl font-semibold font-lato">
           What My Past Clients Say
         </h2>

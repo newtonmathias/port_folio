@@ -63,7 +63,12 @@ const ProjectCard = ({
         {!online && <span>Offline</span>}
         {viewable && online && (
           <span>
-            <Link href={link} rel="noopener noreferrer" target="_blank">
+            <Link
+              href={link}
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="click to View this project"
+            >
               <ExternalLink className="h-4 w-4 cursor-pointer" />
             </Link>
           </span>

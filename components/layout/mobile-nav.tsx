@@ -17,7 +17,7 @@ export function MobileNav() {
   return (
     <div className="flex justify-between items-center">
       <Link
-        aria-label="Home"
+        aria-label="NMM"
         href="/"
         className="items-center space-x-2  lg:hidden  py-6"
       >

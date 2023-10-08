@@ -8,7 +8,7 @@ const Landing = () => {
     <div className="container py-12 md:py-24">
       <header
         className="flex flex-col justify-center items-center text-center"
-        role="heading"
+        role="banner"
         aria-label="Craft. Enhance. Perfect."
         aria-level={1}
       >
