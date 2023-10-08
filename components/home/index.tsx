@@ -6,12 +6,7 @@ import { MoveRight } from "lucide-react";
 const Landing = () => {
   return (
     <div className="container py-12 md:py-24">
-      <header
-        className="flex flex-col justify-center items-center text-center"
-        role="generic"
-        aria-label="Craft. Enhance. Perfect."
-        aria-level={1}
-      >
+      <div className="flex flex-col justify-center items-center text-center">
         <div className="flex flex-col md:flex-row items-center justify-center gap-2 pb-10 md:pb-16">
           <span className="font-medium text-lg text-dark-gray dark:text-light-gray">
             Are You Looking For A Freelance Developer? Look no further.
@@ -24,7 +19,7 @@ const Landing = () => {
           </Link>
         </div>
         <AnimatedText />
-      </header>
+      </div>
       <div className="flex lg:w-1/2 mx-auto text-center">
         <p className="font-lato text-xl text-dark-gray dark:text-light-gray py-8">
           I am a software engineer with a background in full-stack development
