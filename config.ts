@@ -39,7 +39,7 @@ export const projects = [
     tech: ["Nextjs", "MongoDB", "Sanity", "Stripe", "AWS"],
     demo: "https://www.realdiscoveredmathsci.com/",
     viewable: true,
-    online: true,
+    online: false,
   },
   {
     id: 2,
