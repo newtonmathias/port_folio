@@ -6,7 +6,7 @@ const Footer = () => {
     <div>
       <Separator className="my-6" />
       <div className="container flex flex-col md:flex-row justify-between items-center mb-6">
-        <p className="text-sm  py-2">© 2023 Newton Mathias</p>
+        <p className="text-sm  py-2">© 2024 Newton Mathias</p>
         <Socials />
       </div>
     </div>

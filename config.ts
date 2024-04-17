@@ -33,13 +33,23 @@ export const siteConfig = {
 export const projects = [
   {
     id: 1,
+    image: "/images/pitchlink.png",
+    title: "Pitchlink",
+    desc: "A fundraising hub to share your pitch deck, showcase your product, create data rooms, schedule meetings, and identify the most engaged investors based on their activity",
+    tech: ["Nextjs", "AWS", "MySQL", "Stripe", "Shadcn"],
+    demo: "https://www.pitchlink.io/",
+    viewable: true,
+    online: true,
+  },
+  {
+    id: 1,
     image: "/images/booksquare.png",
     title: "Bookstore",
     desc: "A dynamic e-commerce platform for purchasing books, with diverse user roles for engaging in debates, articles, blogs, and discussion forums.",
     tech: ["Nextjs", "MongoDB", "Sanity", "Stripe", "AWS"],
     demo: "https://www.realdiscoveredmathsci.com/",
     viewable: true,
-    online: false,
+    online: true,
   },
   {
     id: 2,
