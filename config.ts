@@ -32,7 +32,7 @@ export const siteConfig = {
 
 export const projects = [
   {
-    id: 1,
+    id: 0,
     image: "/images/pitchlink.png",
     title: "Pitchlink",
     desc: "A fundraising hub to share your pitch deck, showcase your product, create data rooms, schedule meetings, and identify the most engaged investors based on their activity",
@@ -43,22 +43,22 @@ export const projects = [
   },
   {
     id: 1,
-    image: "/images/booksquare.png",
-    title: "Bookstore",
-    desc: "A dynamic e-commerce platform for purchasing books, with diverse user roles for engaging in debates, articles, blogs, and discussion forums.",
-    tech: ["Nextjs", "MongoDB", "Sanity", "Stripe", "AWS"],
-    demo: "https://www.realdiscoveredmathsci.com/",
-    viewable: true,
-    online: true,
-  },
-  {
-    id: 2,
     image: "/images/wbso.png",
     title: "AI Document Generator",
     desc: "An internal application, powered by OpenAI's GPT API, enables efficient WBSO document generation.It has role-based access control for document management.",
     tech: ["ReactJS", "NodeJS", "OpenAI", "PostgreSQL ", "Tailwind"],
     demo: "/",
     viewable: false,
+    online: true,
+  },
+  {
+    id: 2,
+    image: "/images/booksquare.png",
+    title: "Bookstore",
+    desc: "A dynamic e-commerce platform for purchasing books, with diverse user roles for engaging in debates, articles, blogs, and discussion forums.",
+    tech: ["Nextjs", "MongoDB", "Sanity", "Stripe", "AWS"],
+    demo: "https://www.realdiscoveredmathsci.com/",
+    viewable: true,
     online: true,
   },
   {
