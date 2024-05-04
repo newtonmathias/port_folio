@@ -12,6 +12,7 @@ import { siteConfig } from "@/config";
 import { Button } from "../ui/button";
 import { Github, Twitter } from "lucide-react";
 import { ModeToggle } from "../mode-toggle";
+import AIChatButton from "../ai-chat-button";
 
 const MainNav = () => {
   return (
@@ -63,6 +64,7 @@ const MainNav = () => {
           </Link>
 
           <ModeToggle />
+          <AIChatButton />
         </NavigationMenuList>
       </NavigationMenu>
     </div>
