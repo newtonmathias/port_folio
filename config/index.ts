@@ -1,4 +1,4 @@
-import { Icons } from "./components/icons";
+import { Icons } from "../components/icons";
 
 export type SiteConfig = typeof siteConfig;
 
@@ -29,6 +29,94 @@ export const siteConfig = {
     },
   ],
 };
+
+export const info = [
+  {
+    name: "Newton Maithya",
+    location: "Nairobi, Kenya",
+    email: "newtymathias@gmail.com",
+    website: "https://newtonmathias.com",
+    bio: "Hey there! I&apos;m Newton, a passionate software engineer specializing in full-stack development and offensive security, based in Nairobi. My journey into engineering began during my BSc in Electronic and Computer Engineering. Over the years, my interest in creating things on the internet has evolved, and I&apos;ve honed my skills through freelancing, working with clients on Upwork , as well as local businesses. With a solid foundation in cybersecurity, honed through hands-on experiences in bug bounty programs like HackerOne, I seamlessly integrate security into my web development expertise. Possessing a knack for uncovering vulnerabilities, I prioritize fortifying my work against potential threats.",
+    work_experience: [
+      {
+        position: "Full Stack Developer",
+        company: "Pitchlink",
+        location: "Germany",
+        dates: "November 2023 - Present",
+        highlights: [
+          "Developed and maintained a comprehensive web platform for Pitchlink, facilitating seamless communication between investors and startups.",
+          "Utilized  Next.js, TypeScript, and Postgresql to build scalable and responsive web applications.",
+          "Designed and implemented RESTful APIs to handle data exchange between the front-end and back-end systems, ensuring smooth functionality and performance.",
+          "Integrated third-party services and APIs for additional functionality, such as payment gateways and analytics tools.",
+          "Collaborated with a multidisciplinary team of designers, developers, and stakeholders to deliver features according to specifications and deadlines.",
+          "Participated in code reviews, debugging sessions, and performance optimization efforts to maintain code quality and improve system efficiency.",
+          "Engaged in continuous learning and exploration of new technologies to enhance product capabilities and stay updated with industry trends.",
+        ],
+      },
+      {
+        position: "Software Engineer",
+        company: "Vidusubsidies",
+        location: "Denmark",
+        dates: "July 2023 - August 2023",
+        highlights: [
+          "Spearheaded the development of an internal web application for Vindsubsidies, employing cutting-edge technologies such as Next.js| React.js, Node.js (NestJS), and PostgreSQL.",
+          "Implemented a secure Single Sign-On (SSO) mechanism utilizing Azure Active Directory for user authentication, guaranteeing user privacy and data security.",
+          "Designed and established a role-based access control system, differentiating between admin, client, and consultant roles, with the ability for admins to manage users efficiently.",
+          "Engineered a document generation system, incorporating Generative AI API, OpenAI's GPT, offering customizable and user-friendly document templates.",
+          "Managed the end-to-end development process, including front-end and back-end code, database schema design, API documentation, unit testing, and deployments.",
+          "Collaborated within an agile development team consisting of a project manager, front-end developer, and back-end developer, maintaining a strong focus on scalability, reliability, and security.",
+        ],
+      },
+      {
+        position: "Junior Software Engineer",
+        company: "ZipsMarket",
+        location: "Miami, FL",
+        dates: "March 2023 - June 2023",
+        highlights: [
+          "Built 12 customizable website themes, empowering clients to personalize their online presence.",
+          "Created a dynamic deployment system, connecting client sites to a user-friendly panel for customization.",
+          "Provided clients with comprehensive control over their websites, including content, images, blog management, section visibility, and style customization (fonts, colors).",
+          "Implemented advanced features, enabling clients to integrate add-ons like Calendly, maps, and SEO optimization.",
+          "Leveraged JavaScript to manipulate the Document Object Model (DOM), seamlessly injecting client-specific information retrieved through an API.",
+          "Utilized a technology stack comprising HTML, JavaScript, React.js, Tailwind CSS, and Node.js to craft responsive and visually appealing themes.",
+          "Collaborated within an Agile development environment, participating in regular sprints and ensuring agile methodologies were followed.",
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: "Final Year Project: E-Health Care System",
+        dates: "June 2022 - October 2022",
+        description:
+          "Created an E-Health Care System connecting users with doctors through real-time communication through text, call, or video, potentially preventing pre-hospital fatalities and overcrowding by offering remote access.",
+      },
+    ],
+    education: {
+      degree: "Bachelor of Science in Electronic and Computer Engineering",
+      university: "Jomo Kenya University of Agriculture and Technology",
+      location: "Juja, Kenya",
+      year: "2023",
+    },
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "HTML/CSS",
+      "Tailwind",
+      "API development and Integration",
+      "Git",
+      "Docker",
+      "MongoDB",
+      "SQL",
+      "Agile Methodologies",
+      "Linux",
+      "Penetration Testing",
+      "Unit Testing",
+    ],
+  },
+];
 
 export const projects = [
   {
@@ -168,6 +256,19 @@ export const socials = [
     href: "https://www.linkedin.com/in/newton-mathias",
     external: true,
     Icon: Icons.linkedin,
+  },
+];
+
+const otherSocials = [
+  {
+    title: "Calendly",
+    decription: "Schedule a video call via my calendly",
+    href: "https://calendly.com/newtonmathias/30min",
+  },
+  {
+    title: "Upwork",
+    decription: "You can message me or send a job invite on upwork",
+    href: "https://www.upwork.com/freelancers/newtonmathias",
   },
 ];
 

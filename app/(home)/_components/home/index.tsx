@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { Button } from "../../../../components/ui/button";
 import AnimatedText from "./animated-text";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";

@@ -1,5 +1,5 @@
-import Socials from "../socials";
-import { Separator } from "../ui/separator";
+import Socials from "../../../../components/socials";
+import { Separator } from "../../../../components/ui/separator";
 
 const Footer = () => {
   return (

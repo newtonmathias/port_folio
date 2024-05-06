@@ -2,7 +2,7 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Button } from "../ui/button";
+import { Button } from "../../../../components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,8 +11,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import { Input } from "../../../../components/ui/input";
+import { Textarea } from "../../../../components/ui/textarea";
 import { Check } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
@@ -93,7 +93,7 @@ const Contact = () => {
               <p>
                 You can message me or send a job invite on{" "}
                 <Link
-                  href="https://www.upwork.com/freelancers/newtonm3"
+                  href="https://www.upwork.com/freelancers/newtonmathias"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -140,7 +140,7 @@ const Contact = () => {
               <span className="rounded-full text-white p-1 bg-primary-yellow">
                 <Check className="h-5 w-5" />
               </span>
-              <p>Schedule a video callvia my </p>
+              <p>Schedule a video call via my </p>
               <Link
                 href="https://calendly.com/newtonmathias/30min"
                 rel="noopener noreferrer"

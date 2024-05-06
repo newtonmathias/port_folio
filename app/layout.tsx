@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ThemeProvider } from "@/app/(home)/_components/providers/theme-provider";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Lustria, Lato } from "next/font/google";

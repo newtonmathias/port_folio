@@ -7,12 +7,12 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "../ui/navigation-menu";
+} from "../../../../components/ui/navigation-menu";
 import { siteConfig } from "@/config";
-import { Button } from "../ui/button";
+import { Button } from "../../../../components/ui/button";
 import { Github, Twitter } from "lucide-react";
-import { ModeToggle } from "../mode-toggle";
-import AIChatButton from "../ai-chat-button";
+import { ModeToggle } from "../../../../components/mode-toggle";
+import AIChatButton from "../../../../components/ai-chat-button";
 
 const MainNav = () => {
   return (

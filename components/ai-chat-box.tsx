@@ -75,22 +75,11 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
             <div className="mx-8 flex h-full flex-col items-center justify-center gap-3 text-center">
               <Bot size={28} />
               <p className="text-lg font-medium">
-                Send a message to start the AI chat!
+                Welcome! Want to learn more about me or my skills/projects?
               </p>
-              <p>
-                You can ask the chatbot any question about me and it will find
-                the relevant information on this website.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                PS: If you want to learn how to build your own AI chatbot, check
-                out the tutorial on the{" "}
-                <a
-                  href="https://www.youtube.com/c/codinginflow?sub_confirmation=1"
-                  className="text-primary hover:underline"
-                >
-                  Coding in Flow YouTube channel
-                </a>
-                .
+              <p>Ask me anything specific you're curious about</p>
+              <p className="text-sm text-muted-foreground italic">
+                "Tell me about yourself"
               </p>
             </div>
           )}
@@ -114,7 +103,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
           <button
             type="submit"
             className="flex w-10 flex-none items-center justify-center disabled:opacity-50"
-            disabled={isLoading || input.length === 0}
+            disabled={input.length === 0}
             title="Submit message"
           >
             <SendHorizontal size={24} />

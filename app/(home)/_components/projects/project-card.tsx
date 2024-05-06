@@ -1,8 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "../../../../components/ui/card";
 import { ExternalLink } from "lucide-react";
-import { Separator } from "../ui/separator";
+import { Separator } from "../../../../components/ui/separator";
 import Link from "next/link";
 
 interface ProjectCardProps {
