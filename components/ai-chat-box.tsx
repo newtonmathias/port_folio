@@ -41,7 +41,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
   return (
     <div
       className={cn(
-        "bottom-0 right-0 z-50 w-full max-w-[500px] p-1 xl:right-36",
+        "bottom-0 right-0 z-50 w-full max-w-[500px] p-1 xl:right-",
         open ? "fixed" : "hidden"
       )}
     >
@@ -77,9 +77,9 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
               <p className="text-lg font-medium">
                 Welcome! Want to learn more about me or my skills/projects?
               </p>
-              <p>Ask me anything specific you're curious about</p>
+              <p>Ask me anything specific you&apos;re curious about</p>
               <p className="text-sm text-muted-foreground italic">
-                "Tell me about yourself"
+                &quot;Tell me about yourself&quot;
               </p>
             </div>
           )}
