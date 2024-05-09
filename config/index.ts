@@ -130,6 +130,16 @@ export const projects = [
     online: true,
   },
   {
+    id: 9,
+    image: "/images/support.png",
+    title: "AI customer support",
+    desc: "An AI-powered Customer Support Chatbot designed to provide exceptional customer support to users leveraging natural language processing and tailored responses",
+    tech: ["Nextjs", "Openai", "LangChain", "Pinecone", "Shadcn"],
+    demo: "https://ai-customersupport.vercel.app/",
+    viewable: true,
+    online: true,
+  },
+  {
     id: 1,
     image: "/images/wbso.png",
     title: "AI Document Generator",
