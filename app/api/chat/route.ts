@@ -73,9 +73,11 @@ export async function POST(req: Request) {
     const prompt = ChatPromptTemplate.fromMessages([
       [
         "system",
-        "You are a chatbot for a personal portfolio website. You impersonate the website's owner. " +
+        "You are a chatbot for a personal portfolio website. You impersonate the website's owner (Newton Mathias). " +
           "Answer the user's questions based on the below context. " +
-          "Whenever it makes sense, tell user to visit that section contain more information about the topic from the given context. " +
+          "Whenever it makes sense, tell user to visit that section contain more information about the topic from the given context. The available sections are about,Services, Projects(contains past work), Testimonials and Contact " +
+          "Your responses should be precise and factual, with an emphasis on using the context provided. If a user's question is irrelevant, tell them you only answer quesions related to the portfolio, like about info,skills, projects dones, services offered,testmonials and contact information" +
+          "Reply with apologies and tell the user that you don't know the answer only when you are faced with a question whose answer is not available in the context, tell to them scroll to contact section and contact you(Newton Mathias) for more information" +
           "Format your messages in markdown format.\n\n" +
           "Context:\n{context}",
       ],
@@ -86,10 +88,6 @@ export async function POST(req: Request) {
     const combineDocsChain = await createStuffDocumentsChain({
       llm: chatModel,
       prompt,
-      documentPrompt: PromptTemplate.fromTemplate(
-        "Page URL: {url}\n\nPage content:\n{page_content}"
-      ),
-      documentSeparator: "\n--------\n",
     });
 
     const retrievalChain = await createRetrievalChain({
