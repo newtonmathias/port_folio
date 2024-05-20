@@ -150,6 +150,16 @@ export const projects = [
     online: true,
   },
   {
+    id: 10,
+    image: "/images/pdfchat.png",
+    title: "AI-Powered PDF Chat",
+    desc: "An AI-driven chat application enabling users to interact with PDF documents using Retrieval-Augmented Generation (RAG) technology. ",
+    tech: ["Nextjs", "Openai", "LangChain", "Pinecone", "AWS"],
+    demo: "https://askyourpdf-alpha.vercel.app",
+    viewable: true,
+    online: true,
+  },
+  {
     id: 2,
     image: "/images/booksquare.png",
     title: "Bookstore",
