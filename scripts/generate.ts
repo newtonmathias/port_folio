@@ -16,7 +16,7 @@ async function generateEmbeddings() {
   const pinecone = new Pinecone();
   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX!);
 
-  await pinecone.deleteIndex(process.env.PINECONE_INDEX!);
+  // await pinecone.deleteIndex(process.env.PINECONE_INDEX!);
 
   await pinecone.createIndex({
     name: process.env.PINECONE_INDEX!,
