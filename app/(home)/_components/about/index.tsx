@@ -31,7 +31,7 @@ export const About = () => {
             creating things on the internet has evolved, and I&apos;ve honed my
             skills through freelancing, working with clients on{" "}
             <Link
-              href="https://www.upwork.com/freelancers/newtonm3"
+              href="https://www.upwork.com/freelancers/newtonmathias"
               rel="noopener noreferrer"
               target="_blank"
             >
