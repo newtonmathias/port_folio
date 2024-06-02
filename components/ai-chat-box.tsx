@@ -4,6 +4,7 @@ import { Bot, SendHorizontal, Trash, XCircle } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
+import LoadingDots from "./loading-dots";
 
 interface AIChatBoxProps {
   open: boolean;
@@ -19,7 +20,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
     setMessages,
     isLoading,
     error,
-  } = useChat();
+  } = useChat({ streamMode: "text" });
 
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -53,15 +54,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
           {messages.map((message) => (
             <ChatMessage message={message} key={message.id} />
           ))}
-          {isLoading && lastMessageIsUser && (
-            <ChatMessage
-              message={{
-                id: "loading",
-                role: "assistant",
-                content: "Thinking...",
-              }}
-            />
-          )}
+          {isLoading && lastMessageIsUser && <LoadingDots />}
           {error && (
             <ChatMessage
               message={{

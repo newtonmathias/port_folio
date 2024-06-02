@@ -1,106 +1,65 @@
-import { getVectorStore } from "@/lib/astradb";
-import { AIMessage, HumanMessage } from "@langchain/core/messages";
-import {
-  ChatPromptTemplate,
-  MessagesPlaceholder,
-  PromptTemplate,
-} from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
-import { Redis } from "@upstash/redis";
-import {
-  LangChainStream,
-  StreamingTextResponse,
-  Message as VercelChatMessage,
-} from "ai";
-import { UpstashRedisCache } from "langchain/cache/upstash_redis";
-import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
-import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
-import { createRetrievalChain } from "langchain/chains/retrieval";
+import { HumanMessage, AIMessage, ChatMessage } from "@langchain/core/messages";
+import type { Message as VercelChatMessage } from "ai";
+import { loadEmbeddingsModel, loadVectorStore } from "@/lib/pinecone";
+import { createRAGChain } from "@/lib/rag-chain";
+import { Document } from "@langchain/core/documents";
+
+const formatVercelMessages = (message: VercelChatMessage) => {
+  if (message.role === "user") {
+    return new HumanMessage(message.content);
+  } else if (message.role === "assistant") {
+    return new AIMessage(message.content);
+  } else {
+    console.warn(
+      `Unknown message type passed: "${message.role}". Falling back to generic message type.`
+    );
+    return new ChatMessage({ content: message.content, role: message.role });
+  }
+};
+
+export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const messages = body.messages;
+    const messages = body.messages ?? [];
 
-    const chatHistory = messages
+    if (!messages.length) {
+      throw new Error("No messages provided.");
+    }
+
+    const formattedPreviousMessages = messages
       .slice(0, -1)
-      .map((m: VercelChatMessage) =>
-        m.role === "user"
-          ? new HumanMessage(m.content)
-          : new AIMessage(m.content)
-      );
+      .map(formatVercelMessages);
 
-    const currentMessageContent = messages[messages.length - 1].content;
-
-    const cache = new UpstashRedisCache({
-      client: Redis.fromEnv(),
-    });
-
-    const { stream, handlers } = LangChainStream();
+    const currentMessage = messages[messages.length - 1].content;
 
     const chatModel = new ChatOpenAI({
-      modelName: "gpt-3.5-turbo",
+      modelName: "gpt-4",
       streaming: true,
-      callbacks: [handlers],
-      verbose: true,
-      cache,
+      maxTokens: 4000,
     });
 
-    const rephrasingModel = new ChatOpenAI({
-      modelName: "gpt-3.5-turbo",
-      verbose: true,
-      cache,
+    const embeddings = loadEmbeddingsModel();
+
+    const vectorstore = loadVectorStore({
+      embeddings,
     });
 
-    const retriever = (await getVectorStore()).asRetriever();
+    const retriever = (await vectorstore).asRetriever();
 
-    const rephrasePrompt = ChatPromptTemplate.fromMessages([
-      new MessagesPlaceholder("chat_history"),
-      ["user", "{input}"],
-      [
-        "user",
-        "Given the above conversation, generate a search query to look up in order to get information relevant to the current question. " +
-          "Don't leave out any relevant keywords. Only return the query and no other text.",
-      ],
-    ]);
+    const ragChain = await createRAGChain(chatModel, retriever);
 
-    const historyAwareRetrieverChain = await createHistoryAwareRetriever({
-      llm: rephrasingModel,
-      retriever,
-      rephrasePrompt,
+    const stream = await ragChain.stream({
+      input: currentMessage,
+      chat_history: formattedPreviousMessages,
     });
 
-    const prompt = ChatPromptTemplate.fromMessages([
-      [
-        "system",
-        "You are a chatbot for a personal portfolio website. You impersonate the website's owner (Newton Mathias). " +
-          "Answer the user's questions based on the below context. " +
-          "Whenever it makes sense, tell user to visit that section contain more information about the topic from the given context. The available sections are about,Services, Projects(contains past work), Testimonials and Contact " +
-          "Your responses should be precise and factual, with an emphasis on using the context provided. If a user's question is irrelevant, tell them you only answer quesions related to the portfolio, like about info,skills, projects dones, services offered,testmonials and contact information" +
-          "Reply with apologies and tell the user that you don't know the answer only when you are faced with a question whose answer is not available in the context, tell to them scroll to contact section and contact you(Newton Mathias) for more information" +
-          "Format your messages in markdown format.\n\n" +
-          "Context:\n{context}",
-      ],
-      new MessagesPlaceholder("chat_history"),
-      ["user", "{input}"],
-    ]);
+    // Convert to bytes so that we can pass into the HTTP response
+    const byteStream = stream.pipeThrough(new TextEncoderStream());
 
-    const combineDocsChain = await createStuffDocumentsChain({
-      llm: chatModel,
-      prompt,
-    });
-
-    const retrievalChain = await createRetrievalChain({
-      combineDocsChain,
-      retriever: historyAwareRetrieverChain,
-    });
-
-    retrievalChain.invoke({
-      input: currentMessageContent,
-      chat_history: chatHistory,
-    });
-
-    return new StreamingTextResponse(stream);
+    return new Response(byteStream);
   } catch (error) {
     console.error(error);
     return Response.json({ error: "Internal server error" }, { status: 500 });
