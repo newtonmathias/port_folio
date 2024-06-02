@@ -130,6 +130,16 @@ export const projects = [
     online: true,
   },
   {
+    id: 10,
+    image: "/images/eyeconsult.png",
+    title: "Eye Consult",
+    desc: "A platform for eye care consultations that leverages AI-powered Retrieval-Augmented Generation (RAG) and OpenAI to provide personalized diagnosis and treatment recommendations, streamlining the consultation process.",
+    tech: ["Nextjs", "Openai", "LangChain", "Pinecone", "Vercel AI"],
+    demo: "https://aeyeconsult.com/",
+    viewable: true,
+    online: true,
+  },
+  {
     id: 9,
     image: "/images/support.png",
     title: "AI customer support",
